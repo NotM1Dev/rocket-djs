@@ -1,6 +1,4 @@
 # rocket-djs
-
-## About
 rocket-djs is a Discord.js bot handler designed to simplify handling both slash commands and events.
 
 ## Installation
@@ -23,18 +21,19 @@ pnpm add rocket-djs
 // CommonJS
 const { Handler } = require("rocket-djs");
 const { Client } = require("discord.js");
+
 const path = require("path");
 
 // ESM and TypeScript
 import { Handler } from "rocket-djs";
 import { Client } from "discord.js";
+
 import path from "path";
 
-const client = new Client(); // add your client options
+const client = new Client(); // Client options such as intents.
 
-new Rocket(client, {
-    // The path library is recommended to ensure no importing issues.
-    
+new Handler(client, {
+    // It is recommended to use the path library to avoid import issues.
     eventsPath: path.join(__dirname, "events"),
     commandsPath: path.join(__dirname, "commands"),
 });
